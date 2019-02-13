@@ -1,7 +1,9 @@
 from django.shortcuts import render
+from .models import Portfolio
 
 
 
-def home(request):
-    return render(request, 'home.html')
+def portfolio(request):
+    portfolios = Portfolio.objects
+    return render(request, 'portfolio.html',{'portfolios':portfolios})
 # Create your views here.
