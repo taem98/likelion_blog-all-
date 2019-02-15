@@ -1,11 +1,16 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 from django.utils import timezone
+from django.core.paginator import Paginator
 
 # Create your views here.
 def list(request):
     blogs = Blog.objects
-    return render(request, 'list.html', { 'blogs' : blogs })
+    blog_list = Blog.objects.all()
+    paginator = Paginator(blog_list, 3)
+    page = request.GET.get('page')
+    posts = paginator.get_page(page) 
+    return render(request, 'list.html', { 'blogs' : blogs, 'posts':posts })
 
 def home(request):
     return render(request, 'home.html')
