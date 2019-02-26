@@ -2,6 +2,7 @@
 {% load staticfiles %}
 
 {% block contents %}
+<<<<<<< HEAD
 {% comment %} 
 <!doctype html>
 <html lang="en">
@@ -70,20 +71,19 @@
     </div>
   </div>
 </header>
+=======
+>>>>>>> 078f311babc36f0b5b6d4936a860cf9b36c17171
 
 <main role="main">
-
   <section class="jumbotron text-center">
     <div class="container">
+      <img class="card-img-top" src="{%static 'lestwins.jpg'%}" alt="Card image cap" />
       <h1 class="jumbotron-heading">My Portfolio</h1>
-      <p class="lead text-muted">2019~</p>
-      <p>
-        <a href="#" class="btn btn-primary my-2">Main call to action</a>
-        <a href="#" class="btn btn-secondary my-2">Secondary action</a>
-      </p>
+      <p class="lead text-muted">지금까지 만든 나의 작품들!</p>
     </div>
   </section>
 
+<<<<<<< HEAD
  <div class="album py-5 bg-light">
   <div class="container">
 	  <div class="row">
@@ -98,23 +98,26 @@
 	      </div>
 	    </div>
     {% endfor %}
+=======
+  <div class="album py-5 bg-light">
+    <div class="container">
+      <div class="row">
+        {%for portfolio in portfolios.all%}
+        <div class="col-md-4">
+          <div class="card mb-4 shadow-sm">
+            <img class="card-img-top" src="{{ portfolio.image.url }}" alt="Card image cap" />
+            <div class="card-body">
+              <h4>{{ portfolio.title }}</h4>
+              <hr />
+              <p class="card-text">{{ portfolio.description|linebreaks}}</p>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+>>>>>>> 078f311babc36f0b5b6d4936a860cf9b36c17171
     </div>
   </div>
-</div>
-
 </main>
-
-<footer class="text-muted">
-  <div class="container">
-    <p class="float-right">
-      <a href="#">Back to top</a>
-    </p>
-    <p>Album example is &copy; Bootstrap, but please download and customize it for yourself!</p>
-    <p>New to Bootstrap? <a href="https://getbootstrap.com/">Visit the homepage</a> or read our <a href="/docs/4.3/getting-started/introduction/">getting started guide</a>.</p>
-  </div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script>window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')</script><script src="/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-VoPFvGr9GxhDT3n8vqqZ46twP5lgex+raTCfICQy73NLhN7ZqSfCtfSn4mLA2EFA" crossorigin="anonymous"></script></body>
-</html>
 
 {% endblock %}
