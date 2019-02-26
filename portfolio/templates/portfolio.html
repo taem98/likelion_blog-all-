@@ -2,7 +2,7 @@
 {% load staticfiles %}
 
 {% block contents %}
-
+{% comment %} 
 <!doctype html>
 <html lang="en">
   <head>
@@ -38,7 +38,7 @@
     <!-- Custom styles for this template -->
     <link href="album.css" rel="stylesheet">
   </head>
-  <body>
+  <body> {% endcomment %}
     <header>
   <div class="collapse bg-dark" id="navbarHeader">
     <div class="container">
@@ -90,7 +90,7 @@
 	  {% for portfolio in portfolios.all %}
 	    <div class="col-md-4">
 	      <div class="card mb-4 shadow-sm">
-	        <img class="card-img-top" src="{{ portfolio.image.url }}" alt=" Card image cap">
+	        <img class="card-img-top" src="{{ portfolio.image.url }}" alt=" Card image cap"/>
 	        <div class="card-body">
 	          <h4>{{ portfolio.title }}</h4>
 	          <p class="card-text">{{ portfolio.description }}</p>

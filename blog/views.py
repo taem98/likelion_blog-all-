@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import Blog
 from django.utils import timezone
 from django.core.paginator import Paginator
+from .form import BlogPost
 
 # Create your views here.
 def list(request):
@@ -29,3 +30,16 @@ def create(request):
 
 def write(request):
     return render(request, 'write.html')
+
+
+def blogpost(request):
+    if request.method == 'POST':
+        form = BlogPost(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.pub_date = timezone.now()
+            psot.save()
+            return redirect('home')
+    else:
+        form = BlogPost()
+        return render(request, 'write.html', {'form':form})
