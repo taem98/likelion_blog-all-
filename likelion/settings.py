@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'account.apps.AccountConfig',
+    'accounts.apps.AccountsConfig',
     'blog.apps.BlogConfig',
     'portfolio.apps.PortfolioConfig',
+    'map.apps.MapConfig',
     #'event.apps.EventConfig',
     
     #allauth
@@ -153,7 +154,7 @@ AUTHENTICATION_BACKENDS = (
 
 SITE_ID = 1
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/' #로그인하고 이동할 url 설정해주기
 
 ## 기타 설정들 ## 로그인 실패 , 이메일 추가 등등
 
