@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import Blog
+from .models import Blog, Pictures
 from django.utils import timezone
 from django.core.paginator import Paginator
 from .form import BlogPost
+
 
 # Create your views here.
 def list(request):
@@ -14,7 +15,9 @@ def list(request):
     return render(request, 'list.html', { 'blogs' : blogs, 'posts':posts })
 
 def home(request):
-    return render(request, 'home.html')
+    blog = Pictures.objects
+
+    return render(request, 'home.html', {'blog': blog})
     
 def detail(request, blog_id):
     blog_detail = get_object_or_404(Blog, pk=blog_id)

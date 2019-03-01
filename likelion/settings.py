@@ -51,6 +51,7 @@ INSTALLED_APPS = [
 
     #provider 구글 페이스북 깃허브 카톡 등등 소셜 로그인 제공 업체
     'allauth.socialaccount.providers.google',
+    'imagekit',
     
 ]
 
@@ -133,6 +134,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+#========================================================
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'portfolio', 'static')
@@ -140,6 +142,7 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+#=============================================================
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 

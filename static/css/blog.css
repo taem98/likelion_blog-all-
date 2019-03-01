@@ -2,6 +2,8 @@
     margin : 0 auto;
 }
 
-body {
-   
+.cat {
+     
+      background-size : cover;
+      min-height : 100%;
 }
